@@ -20,13 +20,6 @@ app.listen(3000, function () {
   console.log('Your server, listening on port 3000')
 })
 
-// 404
-app.use(function (req, res, next) {
-  const err = new Error('Not found.')
-  err.status = 404
-  next(err)
-})
-
 // Make sure this is right at the end of your server logic!
 // The only thing after this might be a piece of middleware to serve up 500 errors for server problems
 // (However, if you have middleware to serve up 404s, that go would before this as well)
